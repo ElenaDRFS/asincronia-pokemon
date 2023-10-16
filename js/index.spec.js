@@ -41,7 +41,7 @@ describe('Ejercicios Async/Await', function() {
     })
     describe('Ejercicio 2.- Declara una funcion **getImageAndName** que retorne el nombre y la URL de la imagen de un pokemon => (return {img, name})', function() {
         it('La función retorna el nombre y la URL de la imagen de un pokemon', async function(){
-            const response = await getImageAndName()
+            const response = await getImageAndName('pikachu')
             expect(response.img).toContain('png')
         })
     })
