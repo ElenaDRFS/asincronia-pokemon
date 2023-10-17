@@ -104,8 +104,21 @@ async function getRandomCharacterInfo(){
     let epiInfo = await fetch(personaje.episode[0]);
     let epiData = await epiInfo.json();
 
-    let firstEpisode = epiData.episode;
+    let firstEpisode = epiData.name;
     let dateEpisode = epiData.air_date;
+    let card =  `<section class="card">
+                    <img src="${img}" alt="Imagen de ${name}"></img>
+                    <div class="data">
+                        <h1>${name}</h1>
+                        <p>Appears in ${episodes} episodes</p>
+                        <p>First episode: ${firstEpisode}</p>
+                        <p>Air date: ${dateEpisode}</p>
+                    </div>
+                 </section>`
+
+
+
+    document.body.innerHTML += card
 
     return {img, name, episodes, firstEpisode, dateEpisode}
 }
